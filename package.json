@@ -1,0 +1,14 @@
+{
+  "author": "shamim",
+  "description": "Docker Build",
+  "license": "MIT",
+  "repository": {
+    "url": ""
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
