@@ -45,3 +45,13 @@ DOCKER
 
 - tag build image [IMG_ID]
   `docker tag [IMG_ID] [NAME]`
+
+- ```
+  docker build --progress=plain -t
+  rezacse08/mircro-dk .
+  ```
+
+  - `docker-compose up` // to build
+  - `docker-compose up -d` // -d - optional to run on background
+  - `docker-compose up -d --build` --build to rebuild
+  - `docker-compose down` to stop container
