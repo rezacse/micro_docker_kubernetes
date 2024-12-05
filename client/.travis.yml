@@ -1,0 +1,23 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t rezacse08/micro-dk -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true rezacse08/micro-dk npm run test #-- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "micro-dk"
+  env: "micro-dk-env"
+  bucket_name: "elasticbeanstalk-us-east-1-RANDOM"
+  bucket_path: 'micro-dk'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+
+
